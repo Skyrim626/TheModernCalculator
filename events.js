@@ -183,3 +183,70 @@ function eraseLast() {
     document.getElementById('inputValue').value = numbers;
 
 }
+
+/**
+ * A function that displays the number raised to the power of 2
+ */
+function power() {
+
+    let result = Math.pow(numbers, 2); // Calculates the result using Math method
+    document.getElementById('recentInput').value = "sqr(" + numbers + ")";
+    document.getElementById('inputValue').value = result;
+
+    numbers = result;
+
+}
+
+/**
+ * A function that divides the given number by one
+ */
+function divideByOne() {
+
+    document.getElementById('recentInput').value = "1/(" + numbers + ")";
+
+    numbers = (1 / (Number.parseFloat(numbers))).toString();
+
+    if(numbers == Infinity) {
+        document.getElementById('inputValue').value = "Cannot divide by zero";
+        numbers = '0';
+
+    } else {
+        document.getElementById('inputValue').value = numbers;
+    }
+
+}
+
+/**
+ * A function that returns a square root of the given number
+ */
+function squared() {
+
+    document.getElementById('recentInput').value = "√(" + numbers + ")";
+
+    numbers = (Math.sqrt(numbers)).toString();
+
+    document.getElementById('inputValue').value = numbers;
+
+}
+
+/**
+ * A function that gives the percentage of the number
+ */
+function percentage() {
+
+    document.getElementById('recentInput').value = numbers + "% = ";
+    numbers = (Number.parseFloat(numbers) / 100).toString();
+    document.getElementById('inputValue').value = numbers;
+
+}
+
+/**
+ * A function that divides the given number by 100
+ * (THIS FUNCTION IS HELPFUL WHEN IT COMES TO GIVING PERCENTAGES)
+ */
+function clearEntry() {
+
+    numbers = '0';
+    document.getElementById('inputValue').value = numbers;
+
+}
